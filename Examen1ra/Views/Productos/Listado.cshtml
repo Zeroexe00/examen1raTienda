@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Examen1ra.Models.Productos>
+
+<h4>Listado de Productos</h4>
+<hr />
+<table class="table table-bordered table-hover table-responsive">
+    <thead>
+    <th>Codigo</th>
+    <th>Nombre</th>
+    <th>Familia</th>
+    <th>Precio</th>
+    <th>Descuento tope</th>
+    <th>Descripcion</th>
+
+
+    <th colspan="2">Action</th>
+    </thead>
+    <tbody>
+        @foreach (Examen1ra.Models.Productos pro in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => pro.codigobarra)</td>
+                <td>@Html.DisplayFor(m => pro.nombre)</td>
+                <td>@Html.DisplayFor(m => pro.familia)</td>
+                <td>@Html.DisplayFor(m => pro.precio)</td>
+                <td>@Html.DisplayFor(m => pro.descuentomax)</td>
+                <td>@Html.DisplayFor(m => pro.descripcion)</td>
+
+
+
+                <td>@Html.ActionLink("Ver Ficha", "Ficha", new { codigobarra = pro.codigobarra })</td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

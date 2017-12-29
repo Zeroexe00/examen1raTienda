@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "Mantenedor";
+}
+
+<h2>Mantenedor</h2>
+
+<fieldset>
+    <legend>Mantendor de Clientes</legend>
+    @using (@Html.BeginForm("Guardar", "Cliente", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Rut
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("rut", null, new { @class = "form-control" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Nombre
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("nombre", null, new { @class = "form-control" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Apellido
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("apellido", null, new { @class = "form-control" })
+            </span>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Direccion
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("direccion", null, new { @class = "form-control" })
+            </span>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Tipo Cliente
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("tipocliente", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Contado", Value="Contado"},
+                        new SelectListItem{Text="Efectivo", Value="Efectivo"},
+                        new SelectListItem{Text="Credito", Value="Credito"},
+                        new SelectListItem{Text="Documentado", Value="Documentado"},
+
+                    },
+                    "Seleccione tipo de cliente",
+                    new { @class = "form-control" }
+                    )
+            </span>
+        </div>
+
+       
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+        </div>
+
+    }
+
+</fieldset>
+<br />
+<br />
+<fieldset>
+    <legend>Mantendor de Clientes</legend>
+    @using (@Html.BeginForm("Guardar", "Productos", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Codigo de barra
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("codigobarra", null, new { @class = "form-control" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Nombre
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("nombre", null, new { @class = "form-control" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Familia de Productos
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("familia", null, new { @class = "form-control" })
+            </span>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Precio
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("precio", null, new { @class = "form-control" })
+            </span>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Descuento Maximo
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("descuentomax", null, new { @class = "form-control" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Descripcion
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("descripcion", null, new { @class = "form-control" })
+            </span>
+        </div>
+        
+
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Guardar Producto</button>
+        </div>
+
+    }
+
+</fieldset>

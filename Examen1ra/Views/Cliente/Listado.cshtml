@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Examen1ra.Models.Cliente>  
+<h4>Listado de Clientes</h4>
+<hr />
+
+<table class="table table-bordered table-hover table-responsive">
+    <thead>
+    <th>Rut</th>
+    <th>Nombre</th>
+    <th>Sexo</th>
+    <th>Direccion</th>
+    <th>Tipo de Cliente</th>
+    <th colspan="2">Action</th>
+    </thead>
+    <tbody>
+        @foreach (Examen1ra.Models.Cliente cli in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => cli.rut)</td>
+                <td>@Html.DisplayFor(m => cli.nombre)</td>
+                <td>@Html.DisplayFor(m => cli.apellido)</td>
+                <td>@Html.DisplayFor(m => cli.direccion)</td>
+                <td>@Html.DisplayFor(m => cli.tipocliente)</td>
+               
+                <td>@Html.ActionLink("Ver Ficha", "Ficha", new { rut = cli.rut })</td>
+                
+
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
